@@ -33,3 +33,17 @@ First, see the first 10 rows of the original data
 1007:Apple Dumpling Gang, The (1975):Children|Comedy|Western                                                                                                            
 1008:Davy Crockett, King of the Wild Frontier (1955):Adventure|Western                                                                                                  
 1009:Escape to Witch Mountain (1975):Adventure|Children|Fantasy
+
+repeat the same steps for the other two datasets
+
+[maria_dev@sandbox-hdp some_map_reduce_codes]$ hadoop jar /usr/hdp/2.6.5.0-292/hadoop-mapreduce/hadoop-streaming-2.7.3.2.6.5.0-292.jar \
+                                              -file /home/maria_dev/some_map_reduce_codes/mapper_suitable_separator1.py  \
+                                              -mapper "python mapper_suitable_separator1.py"  \
+                                              -input /user/maria_dev/ml-10m/ratings.dat  \
+                                              -output modified_ratings           
+                                                                                                                               
+[maria_dev@sandbox-hdp some_map_reduce_codes]$ hadoop jar /usr/hdp/2.6.5.0-292/hadoop-mapreduce/hadoop-streaming-2.7.3.2.6.5.0-292.jar \
+                                              -file /home/maria_dev/some_map_reduce_codes/mapper_suitable_separator1.py  \
+                                              -mapper "python mapper_suitable_separator1.py"  \
+                                              -input /user/maria_dev/ml-10m/tags.dat  \
+                                              -output modified_tags
