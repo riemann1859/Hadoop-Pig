@@ -1,0 +1,37 @@
+Execution of MapReduce
+
+[maria_dev@sandbox-hdp some_map_reduce_codes]$ hadoop jar /usr/hdp/2.6.5.0-292/hadoop-mapreduce/hadoop-streaming-2.7.3.2.6.5.0-292.jar \
+                                              -file /home/maria_dev/some_map_reduce_codes/mapper_genre_count.py \
+                                              -mapper "python mapper_genre_count.py" \
+                                              -file /home/maria_dev/some_map_reduce_codes/reducer_genre_count.py \
+                                              -reducer "python reducer_genre_count.py" \
+                                              -input /user/maria_dev/modified_movies/part-00000 \
+                                              -output genre_distribution        
+                                              
+output:
+
+
+
+[maria_dev@sandbox-hdp some_map_reduce_codes]$ hadoop fs -cat genre_distribution/part-00000                                                                             
+Drama   5339                                                                                                                                                            
+Comedy  3703                                                                                                                                                            
+Thriller        1706                                                                                                                                                    
+Romance 1685                                                                                                                                                            
+Action  1473                                                                                                                                                            
+Crime   1118                                                                                                                                                            
+Adventure       1025                                                                                                                                                    
+Horror  1013                                                                                                                                                            
+Sci-Fi  754                                                                                                                                                             
+Fantasy 543                                                                                                                                                             
+Children        528                                                                                                                                                     
+War     511                                                                                                                                                             
+Mystery 509                                                                                                                                                             
+Documentary     482                                                                                                                                                     
+Musical 436                                                                                                                                                             
+Animation       286                                                                                                                                                     
+Western 275                                                                                                                                                             
+Film-Noir       148                                                                                                                                                     
+IMAX    29                                                                                                                                                              
+(no genres listed)      1  
+
+
