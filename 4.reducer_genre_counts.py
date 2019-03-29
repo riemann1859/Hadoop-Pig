@@ -1,7 +1,7 @@
 
 
 #!/usr/bin/env python                                                                                                                                                   
-                                                                                                                                                                        
+# want to count the number of occurrences of each  genre  in the whole dataset                                                                                                                                                                   
 import sys                                                                                                                                                              
                                                                                                                                                                         
 genre_dict={}                                                                                                                                                           
