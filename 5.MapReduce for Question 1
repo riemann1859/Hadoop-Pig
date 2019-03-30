@@ -5,7 +5,7 @@ Execution of MapReduce
                                               -mapper "python mapper_genre_count.py" \
                                               -file /home/maria_dev/some_map_reduce_codes/reducer_genre_count.py \
                                               -reducer "python reducer_genre_count.py" \
-                                              -input /user/maria_dev/modified_movies/part-00000 \
+                                              -input /user/maria_dev/ml-10m/part-00000 \
                                               -output genre_distribution        
                                               
 output:
