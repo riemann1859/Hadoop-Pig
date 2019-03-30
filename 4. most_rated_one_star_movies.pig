@@ -19,7 +19,7 @@ movies_data1 = FOREACH movies_data GENERATE (int)STRSPLIT(TRIM(name),'::',3).$0 
                                             STRSPLIT(TRIM(name),'::',3).$2 AS genres;
 ratingsByMovie = Group ratings1 BY movieID;
 -- grouping the relation ratings according to movieID column
-
+ 
 avgRatings = FOREACH ratingsByMovie GENERATE group AS movieID, AVG(ratings1.rating) AS avgRating,
 	COUNT(ratings1.userID) as NumberOfPerson;
 --avgRating is related to quality of film
