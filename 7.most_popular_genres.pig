@@ -1,7 +1,7 @@
 
 
 ratings = LOAD '/user/maria_dev/ml-10m/ratings.dat' USING TextLoader() AS (line:chararray);
-
+  
 
 ratings1 = FOREACH ratings GENERATE    (int)STRSPLIT(TRIM(line),'::',4).$0 AS userID, 
 				      (int)STRSPLIT(TRIM(line),'::',4).$1 AS movieID, 
