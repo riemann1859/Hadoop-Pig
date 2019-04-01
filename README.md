@@ -70,6 +70,6 @@ Western
 1. What is the distribution of genres in the whole movies data?
 2. Which genre is the most popular or rated among users?
 3. Find the oldest movie which is five star. Here being five star means that average rating given by users is >4.
-4. Find popular bad movies.
+4. Find popular bad movies, whose average rating are <2.
 
 
