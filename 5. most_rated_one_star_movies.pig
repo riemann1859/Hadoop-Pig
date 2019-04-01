@@ -35,6 +35,6 @@ namedBadMovies = JOIN badMovies BY movieID, movies_data1 BY movieID;
 namedBadMovies_ = FOREACH namedBadMovies GENERATE avgRating, NumberOfPerson, movieTitle;
 
 sortedBadMovies = ORDER namedBadMovies_ BY NumberOfPerson DESC;
-
+ 
 DUMP sortedBadMovies;
 
