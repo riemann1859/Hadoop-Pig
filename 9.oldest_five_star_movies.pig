@@ -4,7 +4,7 @@ ratings = LOAD '/user/maria_dev/ml-10m/ratings.dat' USING TextLoader() AS (line:
 
 
 ratings1 = FOREACH ratings GENERATE    (int)STRSPLIT(TRIM(line),'::',4).$0 AS userID, 
-									   (int)STRSPLIT(TRIM(line),'::',4).$1 AS movieID, 
+					(int)STRSPLIT(TRIM(line),'::',4).$1 AS movieID, 
                                        (float)STRSPLIT(TRIM(line),'::',4).$2 AS rating,
                                        (int)STRSPLIT(TRIM(line),'::',4).$3 AS ratingTime;
 
@@ -17,8 +17,8 @@ movies_data1 = FOREACH movies_data GENERATE (int)STRSPLIT(TRIM(name),'::',3).$0 
 -- we now extract the release year of the movie from movieTitle column
 
 movies_data2 = FOREACH movies_data1 GENERATE  movieID, 
-								(chararray)SUBSTRING(movieTitle,0,LAST_INDEX_OF(movieTitle,'(')) AS movie_title, 
-								(int)SUBSTRING(movieTitle,LAST_INDEX_OF(movieTitle,'(')+1,LAST_INDEX_OF(movieTitle,')')) AS release_year;
+			(chararray)SUBSTRING(movieTitle,0,LAST_INDEX_OF(movieTitle,'(')) AS movie_title, 
+		     (int)SUBSTRING(movieTitle,LAST_INDEX_OF(movieTitle,'(')+1,LAST_INDEX_OF(movieTitle,')')) AS release_year;
 
 
 
