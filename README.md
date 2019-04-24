@@ -72,4 +72,6 @@ Western
 3. Find the oldest movie which is five star. Here being five star means that average rating given by users is >4.
 4. Find popular bad movies, whose average rating are <2.
 5. Find the most controversial movies. By controversial movie, we mean the ratings the movie considered has are too variable, have a      large variance.
+6. Show the change in the distribution of genres over decades. (Heatmap is a suitable visualization tool in such cases,
+x-axis is genres and y-axis is decades)
 
